@@ -24,7 +24,7 @@ public class TimeHandler : MonoBehaviour
         _gameManager = FindFirstObjectByType<GameManager>();
 
         _timeIsUp ??= new UnityEvent();
-        
+
         _timeIsUp.AddListener(_gameManager.EndGame);
     }
 
