@@ -1,16 +1,24 @@
+using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerInputManager : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    PlayerController _player;
+    PlayerInputs _inputActions;
+
+    void Awake()
     {
-        
+        _player = GetComponent<PlayerController>();
     }
 
-    // Update is called once per frame
-    void Update()
+    void OnEnable()
     {
-        
+        if (_inputActions == null)
+        {
+            _inputActions = new PlayerInputs();
+            _inputActions.PlayerActions.Move.performed += (val) => _player.HandleMovementInput(val.ReadValue<Vector2>());
+        }
+        _inputActions.Enable();
     }
 }
