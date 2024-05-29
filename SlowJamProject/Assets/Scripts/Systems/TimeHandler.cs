@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class TimeHandler : MonoBehaviour
 {
@@ -10,14 +11,31 @@ public class TimeHandler : MonoBehaviour
     private string _ampmString;
     [field: SerializeField] public float TimeStep { get; private set; }
 
+    private GameManager _gameManager;
+
+    private UnityEvent _timeIsUp;
+
+    [SerializeField] private int timeToEndAt;
+    [SerializeField] private bool endOnAM;
+
     private void Awake()
     {
         _timerText = GetComponent<TMP_Text>();
+        _gameManager = FindFirstObjectByType<GameManager>();
+
+        _timeIsUp ??= new UnityEvent();
+        
+        _timeIsUp.AddListener(_gameManager.EndGame);
     }
 
     public void StartCountingTimer()
     {
         InvokeRepeating(nameof(IncrementClock), 0, TimeStep);
+    }
+
+    public void StopCountingTimer()
+    {
+        CancelInvoke(nameof(IncrementClock));
     }
 
     private void IncrementClock()
@@ -34,7 +52,12 @@ public class TimeHandler : MonoBehaviour
         }
 
         _ampmString = !_am ? "PM" : "AM";
-        
+
         _timerText.text = $"{currentTime} {_ampmString}";
+
+        if (currentTime == timeToEndAt && endOnAM == _am)
+        {
+            _timeIsUp.Invoke();
+        }
     }
 }

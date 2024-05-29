@@ -22,6 +22,11 @@ public class DirectionalLightHandler : MonoBehaviour
     {
         InvokeRepeating(nameof(AddToRotation), 0, rotationFrequency);
     }
+
+    public void StopDayCycle()
+    {
+        CancelInvoke(nameof(AddToRotation));
+    }
     
     private void AddToRotation()
     {
