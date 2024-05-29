@@ -9,6 +9,7 @@ public class PlayerGroundIdle : PlayerBaseState
     public override void EnterState() 
     {
         Debug.Log("Grounded and doing nothing, so idling.");
+        _player.TakeFlightEvent += HandleFlight;
     }
 
     public override void UpdateState()
@@ -19,5 +20,11 @@ public class PlayerGroundIdle : PlayerBaseState
     public override void ExitState()
     {
         Debug.Log("Leaving grounded Idle!");
+        _player.TakeFlightEvent -= HandleFlight;
+    }
+
+    void HandleFlight()
+    {
+        _player.PlayerStates.ChangeState(_player.PlayerStates.TakeOff);
     }
 }

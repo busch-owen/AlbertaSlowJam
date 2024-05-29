@@ -19,9 +19,12 @@ public class StateMachine
 
     public void ChangeState(IState nextState)
     {
-        CurrentState.ExitState();
-        CurrentState = nextState;
-        nextState.EnterState();
+        if (CurrentState != null)
+        {
+            CurrentState.ExitState();
+            CurrentState = nextState;
+        }
+        nextState?.EnterState();
 
         StateChanged?.Invoke(nextState);
     }

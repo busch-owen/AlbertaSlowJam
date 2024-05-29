@@ -7,6 +7,8 @@ public class PlayerStateMachine : StateMachine
     #region Player States
     // Grounded States
     public PlayerGroundIdle GroundedIdle;
+    public PlayerTakeOffState TakeOff;
+    public PlayerAerialIdleState AerialIdle;
     // Airial States
     #endregion
 

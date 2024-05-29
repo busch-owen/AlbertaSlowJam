@@ -18,6 +18,7 @@ public class PlayerInputManager : MonoBehaviour
         {
             _inputActions = new PlayerInputs();
             _inputActions.PlayerActions.Move.performed += (val) => _player.HandleMovementInput(val.ReadValue<Vector2>());
+            _inputActions.PlayerActions.TakeFlight.performed += (val) => _player.HandleTakeFlight();
         }
         _inputActions.Enable();
     }
