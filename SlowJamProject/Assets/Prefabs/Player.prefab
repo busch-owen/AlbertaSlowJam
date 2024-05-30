@@ -9,10 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2764649761464166280}
-  - component: {fileID: 7435531746730542279}
   - component: {fileID: 6240197921701102414}
   - component: {fileID: 5075594235832021925}
   - component: {fileID: 4745690359068448058}
+  - component: {fileID: 1692757555528869755}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -36,33 +36,6 @@ Transform:
   - {fileID: 1440553535373161486}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &7435531746730542279
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1054755536172528791}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 112
-  m_CollisionDetection: 1
 --- !u!114 &6240197921701102414
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -76,10 +49,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _birdBody: {fileID: 0}
-  <FlySpeed>k__BackingField: 10
+  <Controller>k__BackingField: {fileID: 0}
+  <FlySpeed>k__BackingField: 5
   <SwoopSpeed>k__BackingField: 15
   <TakeOffForce>k__BackingField: 100
   IsFlying: 0
+  Gravity: -9.81
 --- !u!114 &5075594235832021925
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -114,6 +89,31 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!143 &1692757555528869755
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1054755536172528791}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Height: 2.6
+  m_Radius: 0.5
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: -0.1, z: 0}
 --- !u!1 &2729897983878447170
 GameObject:
   m_ObjectHideFlags: 0

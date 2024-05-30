@@ -54,6 +54,15 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Camera"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""45128930-3c3d-4295-9a1e-0f4002f66f1d"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -124,6 +133,61 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": true
                 },
                 {
+                    ""name"": ""LeftStick"",
+                    ""id"": ""ce542a7e-bc5d-4089-8cc2-8ebce6cd536b"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""f51347cc-3588-4a93-819e-6dc49ff3d421"",
+                    ""path"": ""<Gamepad>/leftStick/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""4850c7d8-fac7-4440-a6e2-83ad882e532c"",
+                    ""path"": ""<Gamepad>/leftStick/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""1e1d6bb0-bd3d-4877-86d4-f2bf8cf74e03"",
+                    ""path"": ""<Gamepad>/leftStick/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""4ac7ae11-afb5-4884-a913-a8351fcbc0f0"",
+                    ""path"": ""<Gamepad>/leftStick/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
                     ""name"": """",
                     ""id"": ""d0fb1910-b4e0-4f80-8196-7c288b1d54d9"",
                     ""path"": ""<Mouse>/leftButton"",
@@ -133,6 +197,61 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                     ""action"": ""Swoop"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""RightStick"",
+                    ""id"": ""3fe2819e-fb40-43e7-be57-64a980ea48b7"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Camera"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""bde0a309-4cee-4be2-ade6-4b5cddd5413a"",
+                    ""path"": ""<Gamepad>/rightStick/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Camera"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""f26a288d-e296-4b47-b521-c96fcd3ab204"",
+                    ""path"": ""<Gamepad>/rightStick/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Camera"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""b3f776fb-6726-4f5e-a23e-b557158d8186"",
+                    ""path"": ""<Gamepad>/rightStick/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Camera"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""e40a259c-72c3-4378-832f-b9b3fe4c75d7"",
+                    ""path"": ""<Gamepad>/rightStick/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Camera"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
                 }
             ]
         },
@@ -165,13 +284,42 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
             ]
         }
     ],
-    ""controlSchemes"": []
+    ""controlSchemes"": [
+        {
+            ""name"": ""KBM"",
+            ""bindingGroup"": ""KBM"",
+            ""devices"": [
+                {
+                    ""devicePath"": ""<Keyboard>"",
+                    ""isOptional"": false,
+                    ""isOR"": false
+                },
+                {
+                    ""devicePath"": ""<Mouse>"",
+                    ""isOptional"": false,
+                    ""isOR"": false
+                }
+            ]
+        },
+        {
+            ""name"": ""GamePad"",
+            ""bindingGroup"": ""GamePad"",
+            ""devices"": [
+                {
+                    ""devicePath"": ""<Gamepad>"",
+                    ""isOptional"": false,
+                    ""isOR"": false
+                }
+            ]
+        }
+    ]
 }");
         // PlayerActions
         m_PlayerActions = asset.FindActionMap("PlayerActions", throwIfNotFound: true);
         m_PlayerActions_Move = m_PlayerActions.FindAction("Move", throwIfNotFound: true);
         m_PlayerActions_TakeFlight = m_PlayerActions.FindAction("TakeFlight", throwIfNotFound: true);
         m_PlayerActions_Swoop = m_PlayerActions.FindAction("Swoop", throwIfNotFound: true);
+        m_PlayerActions_Camera = m_PlayerActions.FindAction("Camera", throwIfNotFound: true);
         // UIActions
         m_UIActions = asset.FindActionMap("UIActions", throwIfNotFound: true);
         m_UIActions_Newaction = m_UIActions.FindAction("New action", throwIfNotFound: true);
@@ -245,6 +393,7 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
     private readonly InputAction m_PlayerActions_Move;
     private readonly InputAction m_PlayerActions_TakeFlight;
     private readonly InputAction m_PlayerActions_Swoop;
+    private readonly InputAction m_PlayerActions_Camera;
     public struct PlayerActionsActions
     {
         private @PlayerInputs m_Wrapper;
@@ -252,6 +401,7 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
         public InputAction @Move => m_Wrapper.m_PlayerActions_Move;
         public InputAction @TakeFlight => m_Wrapper.m_PlayerActions_TakeFlight;
         public InputAction @Swoop => m_Wrapper.m_PlayerActions_Swoop;
+        public InputAction @Camera => m_Wrapper.m_PlayerActions_Camera;
         public InputActionMap Get() { return m_Wrapper.m_PlayerActions; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -270,6 +420,9 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
             @Swoop.started += instance.OnSwoop;
             @Swoop.performed += instance.OnSwoop;
             @Swoop.canceled += instance.OnSwoop;
+            @Camera.started += instance.OnCamera;
+            @Camera.performed += instance.OnCamera;
+            @Camera.canceled += instance.OnCamera;
         }
 
         private void UnregisterCallbacks(IPlayerActionsActions instance)
@@ -283,6 +436,9 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
             @Swoop.started -= instance.OnSwoop;
             @Swoop.performed -= instance.OnSwoop;
             @Swoop.canceled -= instance.OnSwoop;
+            @Camera.started -= instance.OnCamera;
+            @Camera.performed -= instance.OnCamera;
+            @Camera.canceled -= instance.OnCamera;
         }
 
         public void RemoveCallbacks(IPlayerActionsActions instance)
@@ -346,11 +502,30 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
         }
     }
     public UIActionsActions @UIActions => new UIActionsActions(this);
+    private int m_KBMSchemeIndex = -1;
+    public InputControlScheme KBMScheme
+    {
+        get
+        {
+            if (m_KBMSchemeIndex == -1) m_KBMSchemeIndex = asset.FindControlSchemeIndex("KBM");
+            return asset.controlSchemes[m_KBMSchemeIndex];
+        }
+    }
+    private int m_GamePadSchemeIndex = -1;
+    public InputControlScheme GamePadScheme
+    {
+        get
+        {
+            if (m_GamePadSchemeIndex == -1) m_GamePadSchemeIndex = asset.FindControlSchemeIndex("GamePad");
+            return asset.controlSchemes[m_GamePadSchemeIndex];
+        }
+    }
     public interface IPlayerActionsActions
     {
         void OnMove(InputAction.CallbackContext context);
         void OnTakeFlight(InputAction.CallbackContext context);
         void OnSwoop(InputAction.CallbackContext context);
+        void OnCamera(InputAction.CallbackContext context);
     }
     public interface IUIActionsActions
     {

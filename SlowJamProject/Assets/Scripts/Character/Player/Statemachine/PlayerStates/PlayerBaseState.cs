@@ -12,4 +12,9 @@ public class PlayerBaseState : IState
     public virtual void EnterState() {}
     public virtual void UpdateState() {}
     public virtual void ExitState() {}
+
+    protected void Movement(Vector3 movement)
+    {
+        _player.Controller.Move(movement * Time.fixedDeltaTime);
+    }
 }

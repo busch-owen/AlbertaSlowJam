@@ -14,7 +14,7 @@ public class PlayerGroundIdle : PlayerBaseState
 
     public override void UpdateState()
     {
-        // Doing the update thing here.
+        // Update stuff here.
     }
 
     public override void ExitState()

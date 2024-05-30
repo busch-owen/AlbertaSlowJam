@@ -17,12 +17,7 @@ public class PlayerAerialIdleState : PlayerBaseState
     {
         if (_player.DirectionInput != Vector2.zero)
         {
-            // Move to aerialMovementState.
+            _player.PlayerStates.ChangeState(_player.PlayerStates.AerialMoveState);
         }
-    }
-
-    public override void ExitState()
-    {
-        base.ExitState();
     }
 }
