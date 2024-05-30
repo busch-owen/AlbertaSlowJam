@@ -20,6 +20,9 @@ public class PlayerController : MonoBehaviour
     public float FlySpeed { get; private set; } = 10f;
     [field:SerializeField]
     public float SwoopSpeed { get; private set; } = 15f;
+    [field:SerializeField]
+    public float GlideSpeed { get; private set; } = 1.5f;
+    public float Velocity;
     public Vector2 DirectionInput { get; private set; }
     Vector2 _cameraDirection;
     [field:SerializeField]
@@ -52,7 +55,8 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
-        // IsFlying = false;
+        Cursor. visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
         PlayerStates.Initialize(PlayerStates.AerialIdle);
     }
 
@@ -60,6 +64,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         PlayerStates.Update();
+        ResetZRotation();
     }
 
     public void HandleMovementInput(Vector2 inputVec)
@@ -73,6 +78,15 @@ public class PlayerController : MonoBehaviour
         if (Controller.isGrounded)
         {
             TakeFlightEvent?.Invoke();
+        }
+    }
+
+    void ResetZRotation()
+    {
+        var rotZ = transform.rotation;
+        if (transform.rotation.z != 0)
+        {
+            rotZ.z = 0f;
         }
     }
 }

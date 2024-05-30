@@ -13,12 +13,14 @@ public class PlayerAerialMoveState : PlayerBaseState
     public override void EnterState()
     {
         Debug.Log("Aerial Movement yo!");
+        _player.Velocity = _player.FlySpeed;
     }
 
     public override void UpdateState()
     {
         Vector3 movementInput = CalculateMovement();
-        Movement(movementInput * _player.FlySpeed);
+        var vectorLerpMovement = Vector3.Lerp(movementInput, movementInput * _player.Velocity, 3f);
+        Movement(vectorLerpMovement);
         FaceDirection(movementInput);
 
         if (movementInput == Vector3.zero)

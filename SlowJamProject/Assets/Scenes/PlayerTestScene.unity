@@ -363,7 +363,7 @@ MonoBehaviour:
     Controllers:
     - Name: Look Orbit X
       Owner: {fileID: 1021908571}
-      Enabled: 1
+      Enabled: 0
       Input:
         InputAction: {fileID: 6510825440048181399, guid: 130e8ba479932bf43b1bc1271b5a307e, type: 3}
         Gain: -1
@@ -853,6 +853,10 @@ PrefabInstance:
     - target: {fileID: 6240197921701102414, guid: ea55fea10db5f6141bddb874200274b7, type: 3}
       propertyPath: <FlySpeed>k__BackingField
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6240197921701102414, guid: ea55fea10db5f6141bddb874200274b7, type: 3}
+      propertyPath: <GlideSpeed>k__BackingField
+      value: 0.85
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
