@@ -32,8 +32,7 @@ public class PlayerAerialMoveState : PlayerBaseState
     {
         Vector3 forward = _player.MainCameraTransform.forward;
         Vector3 right = _player.MainCameraTransform.right;
-
-        forward.y = 0f;
+        
         right.y = 0f;
 
         forward.Normalize();
