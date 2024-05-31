@@ -665,7 +665,7 @@ GameObject:
   - component: {fileID: 638909097}
   - component: {fileID: 638909096}
   - component: {fileID: 638909100}
-  - component: {fileID: 638909101}
+  - component: {fileID: 638909103}
   - component: {fileID: 638909102}
   - component: {fileID: 638909099}
   m_Layer: 0
@@ -743,7 +743,7 @@ Transform:
   m_GameObject: {fileID: 638909095}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0.0000009238719, w: 1}
-  m_LocalPosition: {x: 0.0000055562728, y: 5.537058, z: -9.537169}
+  m_LocalPosition: {x: 0, y: 5.537058, z: -9.537169}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -836,7 +836,20 @@ MonoBehaviour:
       BarrelClipping: 0.25
       Anamorphism: 0
   BlendHint: 0
---- !u!114 &638909101
+--- !u!114 &638909102
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 638909095}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4afa82ae3200b82408d605c3dbdd1e38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Damping: 0.1
+--- !u!114 &638909103
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -850,7 +863,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TargetOffset: {x: 0, y: 0, z: 0}
   TrackerSettings:
-    BindingMode: 3
+    BindingMode: 4
     PositionDamping: {x: 1, y: 1, z: 1}
     AngularDampingMode: 0
     RotationDamping: {x: 1, y: 1, z: 1}
@@ -899,19 +912,6 @@ MonoBehaviour:
       Wait: 1
       Time: 2
     Restrictions: 0
---- !u!114 &638909102
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 638909095}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4afa82ae3200b82408d605c3dbdd1e38, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Damping: 0.5
 --- !u!1 &741118300
 GameObject:
   m_ObjectHideFlags: 0
@@ -1187,7 +1187,7 @@ MonoBehaviour:
   WorldUpOverride: {fileID: 0}
   ChannelMask: -1
   UpdateMethod: 2
-  BlendUpdateMethod: 1
+  BlendUpdateMethod: 0
   LensModeOverride:
     Enabled: 0
     DefaultMode: 2
@@ -1210,7 +1210,7 @@ Transform:
   m_GameObject: {fileID: 1395076095}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: -0.0000009238719, w: 1}
-  m_LocalPosition: {x: 0.0000055562728, y: 5.537058, z: -9.537169}
+  m_LocalPosition: {x: 0, y: 5.537058, z: -9.537169}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
