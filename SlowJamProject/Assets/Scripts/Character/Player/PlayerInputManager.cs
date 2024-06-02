@@ -13,5 +13,16 @@ public class PlayerInputManager : MonoBehaviour
 
             _inputActions.Player.Move.performed += i => _player.HandleMovementInput(i.ReadValue<Vector2>());
         }
+        _inputActions.Enable();
+    }
+
+    void OnDisable()
+    {
+        _inputActions.Disable();
+    }
+
+    void Awake()
+    {
+        _player = GetComponent<PlayerController>();
     }
 }

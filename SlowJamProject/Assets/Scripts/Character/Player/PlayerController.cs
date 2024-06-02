@@ -1,4 +1,5 @@
 using System;
+using UnityEditor.Rendering;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -9,12 +10,13 @@ public class PlayerController : MonoBehaviour
     GameObject _birdBody;
     public Rigidbody Rb { get; private set; }
     [field:SerializeField]
-    public CharacterController Controller { get; private set; }
+    // public CharacterController Controller { get; private set; }
     public Animator Animator { get; private set; }
     public PlayerStateMachine PlayerStates { get; private set; }
     #endregion
 
     #region Movement Variables
+    public float Velocity;
     [field:SerializeField]
     public float ReducedSpeed { get; private set; } = 0.85f;
     [field:SerializeField]
@@ -24,22 +26,27 @@ public class PlayerController : MonoBehaviour
     [field:SerializeField]
     public float SwoopSpeed { get; private set; } = 15f;
     public Vector2 DirectionInput { get; private set; }
+    [field:SerializeField]
+    public float AngleX { get; private set; } = 30f;
+    [field:SerializeField]
+    public float AngleY { get; private set; } = 3f;
+    public float TurnSensitivity { get; private set; } = 15f;
     #endregion
 
     // Misc
     #region Misc Variables
     [SerializeField]
     public float Gravity = -9.81f;
-    public Transform MainCameraTransform { get; private set; }
+    // public Transform MainCameraTransform { get; private set; }
     #endregion
 
     void Awake()
     {
         _birdBody = GameObject.FindGameObjectWithTag("BirdBody");
         Rb = GetComponent<Rigidbody>();
-        Controller = GetComponent<CharacterController>();
+        // Controller = GetComponent<CharacterController>();
 
-        MainCameraTransform = Camera.main.transform;
+        // MainCameraTransform = Camera.main.transform;
 
         if (PlayerStates == null)
         {
