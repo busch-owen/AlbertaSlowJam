@@ -42,9 +42,10 @@ public class PlayerBaseState : IState
 
     void TurnShipVisuals()
     {
-        _player.transform.localEulerAngles = new Vector3(
-            _player.DirectionInput.y * _player.AngleY, 
-            _player.transform.localEulerAngles.y, 
-            -_player.DirectionInput.x * _player.AngleX);
+        Quaternion flightRotation = Quaternion.Slerp(_player.transform.rotation, Quaternion.Euler(new Vector3(
+            _player.DirectionInput.y * _player.AngleY,
+            _player.transform.localEulerAngles.y, -_player.DirectionInput.x * _player.AngleX)), Time.fixedDeltaTime * 0.65f);
+
+        _player.transform.rotation = flightRotation;
     }
 }

@@ -6,12 +6,12 @@ public class PlayerStateMachine : StateMachine
 {
     #region Player States
     public PlayerGlideState GlideState;
-    public PlayerFlyState FlyState;
+    public PlayerAttackState StrikeState;
     #endregion
 
     public PlayerStateMachine(PlayerController player)
     {
         this.GlideState = new PlayerGlideState(player);
-        this.FlyState = new PlayerFlyState(player);
+        this.StrikeState = new PlayerAttackState(player);
     }
 }

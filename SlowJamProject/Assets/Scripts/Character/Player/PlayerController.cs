@@ -30,6 +30,7 @@ public class PlayerController : MonoBehaviour
     public float AngleX { get; private set; } = 30f;
     [field:SerializeField]
     public float AngleY { get; private set; } = 3f;
+    [field:SerializeField]
     public float TurnSensitivity { get; private set; } = 15f;
     #endregion
 
@@ -67,5 +68,10 @@ public class PlayerController : MonoBehaviour
     public void HandleMovementInput(Vector2 inputs)
     {
         DirectionInput = inputs;
+    }
+
+    public void ProcessAttack()
+    {
+        // 
     }
 }
