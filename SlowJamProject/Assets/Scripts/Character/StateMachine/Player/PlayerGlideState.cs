@@ -9,13 +9,19 @@ public class PlayerGlideState : PlayerBaseState
     public override void EnterState()
     {
         _player.Velocity = _player.GlideSpeed;
+        _player.Camera.SwitchToFollowView();
     }
 
     public override void UpdateState()
     {
-        Glide();
-        CalcTurns();
         HandleSpeed();
+        CalcTurns();
+    }
+
+    public override void FixedUpdateState()
+    {
+        Glide();
+        
     }
 
     void HandleSpeed()

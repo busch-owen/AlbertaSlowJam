@@ -6,7 +6,7 @@ public class PlayerBaseState : IState
 
     public PlayerBaseState(PlayerController player)
     {
-        this._player = player;
+        _player = player;
     }
 
     public virtual void EnterState() {}
@@ -37,16 +37,16 @@ public class PlayerBaseState : IState
 
     protected void CalcTurns()
     {
-        _player.transform.Rotate(Vector3.up, _player.DirectionInput.x * _player.TurnSensitivity * Time.fixedDeltaTime);
+        _player.transform.Rotate(Vector3.up, _player.DirectionInput.x * _player.TurnSensitivity * Time.deltaTime);
         TurnShipVisuals();
     }
 
     void TurnShipVisuals()
     {
-        Quaternion flightRotation = Quaternion.Slerp(_player.BirdBody.transform.rotation, Quaternion.Euler(new Vector3(
+        Quaternion flightRotation = Quaternion.Slerp(_player.BirdBody.transform.localRotation, Quaternion.Euler(new Vector3(
             _player.DirectionInput.y * _player.AngleY,
-            _player.BirdBody.transform.localEulerAngles.y, -_player.DirectionInput.x * _player.AngleX)), Time.fixedDeltaTime * 0.65f);
+            _player.BirdBody.transform.localEulerAngles.y, -_player.DirectionInput.x * _player.AngleX)), Time.fixedDeltaTime * _player.RollSpeed);
 
-        _player.transform.rotation = flightRotation;
+        _player.BirdBody.transform.localRotation = flightRotation;
     }
 }

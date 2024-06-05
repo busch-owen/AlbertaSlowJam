@@ -1,6 +1,5 @@
-using System;
-using UnityEditor.Rendering;
 using UnityEngine;
+
 
 public class PlayerController : MonoBehaviour
 {
@@ -31,13 +30,31 @@ public class PlayerController : MonoBehaviour
     public float AngleY { get; private set; } = 3f;
     [field:SerializeField]
     public float TurnSensitivity { get; private set; } = 15f;
+    
+    [field:SerializeField]
+    public float RollSpeed { get; private set; }
     #endregion
 
     #region Attack Variables
     
     [field: SerializeField]
     public Vector3 AttackVelocity { get; private set; }
+
+    [field: SerializeField]
+    public Vector3 GrabPosition { get; private set; }
     
+    [field: SerializeField]
+    public float GrabRadius { get; private set; }
+
+    [field: SerializeField]
+    public LayerMask CritterLayer { get; private set; }
+    
+    #endregion
+
+    #region Camera Stuff
+
+    public CameraController Camera;
+
     #endregion
     
     // Misc
@@ -50,6 +67,7 @@ public class PlayerController : MonoBehaviour
     void Awake()
     {
         BirdBody = GameObject.FindGameObjectWithTag("BirdBody");
+        Camera = FindFirstObjectByType<CameraController>();
         Rb = GetComponent<Rigidbody>();
         // Controller = GetComponent<CharacterController>();
 
@@ -81,9 +99,20 @@ public class PlayerController : MonoBehaviour
         DirectionInput = inputs;
     }
 
+    public void AimAttack()
+    {
+        PlayerStates.ChangeState(PlayerStates.AimState);
+        Debug.Log("Aiming");
+    }
+    
     public void ProcessAttack()
     {
         PlayerStates.ChangeState(PlayerStates.StrikeState);
         Debug.Log("Attacking");
+    }
+    
+    void OnDrawGizmos()
+    {
+        Gizmos.DrawWireSphere(transform.position + GrabPosition, GrabRadius);
     }
 }

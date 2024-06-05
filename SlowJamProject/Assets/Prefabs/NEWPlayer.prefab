@@ -155,7 +155,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: faee19aeac866284da15d1e413faafaf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _birdBody: {fileID: 0}
+  BirdBody: {fileID: 0}
   <Animator>k__BackingField: {fileID: 0}
   Velocity: 0
   <ReducedSpeed>k__BackingField: 0.85
@@ -164,7 +164,8 @@ MonoBehaviour:
   <SwoopSpeed>k__BackingField: 1250
   <AngleX>k__BackingField: 40
   <AngleY>k__BackingField: 0.5
-  <TurnSensitivity>k__BackingField: 30
+  <TurnSensitivity>k__BackingField: 70
+  <AttackVelocity>k__BackingField: {x: 0, y: 0, z: 0}
   Gravity: -9.81
 --- !u!114 &9194200798187409781
 MonoBehaviour:

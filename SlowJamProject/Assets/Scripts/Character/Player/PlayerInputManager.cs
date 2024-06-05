@@ -12,7 +12,9 @@ public class PlayerInputManager : MonoBehaviour
             _inputActions = new InputSystem_Actions();
 
             _inputActions.Player.Move.performed += i => _player.HandleMovementInput(i.ReadValue<Vector2>());
-            _inputActions.Player.Attack.started += ctx => _player.ProcessAttack();
+            _inputActions.Player.Move.canceled += i => _player.HandleMovementInput(i.ReadValue<Vector2>());
+            _inputActions.Player.Attack.started += ctx => _player.AimAttack();
+            _inputActions.Player.Attack.canceled += ctx => _player.ProcessAttack();
         }
         _inputActions.Enable();
     }

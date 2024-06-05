@@ -1,22 +1,25 @@
 using System;
+using Unity.Cinemachine;
 using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    [SerializeField] private Transform followTarget;
-    [SerializeField] private float followOffset;
-    [SerializeField] private float followHeight;
-    [SerializeField] private float followLerpSpeed;
-    [SerializeField] private float lookAtLerpSpeed;
+    private CinemachineFollow _cinemachineFollow;
 
-    private void LateUpdate()
+    [SerializeField] private Vector3 followPosition, topDownPosition;
+
+    private void Awake()
     {
-        transform.position = Vector3.Lerp(transform.position, followTarget.forward * followOffset,
-            followLerpSpeed * Time.deltaTime);
-        
-        var lookDirection = followTarget.position - transform.position;
-        lookDirection.Normalize();
+        _cinemachineFollow = GetComponent<CinemachineFollow>();
+    }
 
-        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(lookDirection), lookAtLerpSpeed * Time.deltaTime);
+    public void SwitchToTopDownView()
+    {
+        _cinemachineFollow.FollowOffset = topDownPosition;
+    }
+
+    public void SwitchToFollowView()
+    {
+        _cinemachineFollow.FollowOffset = followPosition;
     }
 }
