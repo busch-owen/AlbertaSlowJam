@@ -6,6 +6,8 @@ public class CameraController : MonoBehaviour
 {
     private CinemachineFollow _cinemachineFollow;
 
+    [SerializeField] private float lerpSpeed;
+
     [SerializeField] private Vector3 followPosition, topDownPosition;
 
     private void Awake()
@@ -15,7 +17,7 @@ public class CameraController : MonoBehaviour
 
     public void SwitchToTopDownView()
     {
-        _cinemachineFollow.FollowOffset = topDownPosition;
+        _cinemachineFollow.FollowOffset = Vector3.Lerp(_cinemachineFollow.FollowOffset, topDownPosition, lerpSpeed * Time.fixedDeltaTime);
     }
 
     public void SwitchToFollowView()

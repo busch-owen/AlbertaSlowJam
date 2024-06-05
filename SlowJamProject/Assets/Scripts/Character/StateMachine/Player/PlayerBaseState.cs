@@ -49,4 +49,11 @@ public class PlayerBaseState : IState
 
         _player.BirdBody.transform.localRotation = flightRotation;
     }
+
+    protected void ReturnToFlight()
+    {
+        _player.Rb.linearVelocity = _player.TakeoffSpeed * Time.fixedDeltaTime;
+        _player.Camera.SwitchToFollowView();
+        _player.TakingOff = true;
+    }
 }

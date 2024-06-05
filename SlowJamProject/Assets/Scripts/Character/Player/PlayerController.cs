@@ -1,28 +1,35 @@
+using System;
 using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.Serialization;
 
 
 public class PlayerController : MonoBehaviour
 {
     #region Components
-    [Header("Components")]
-    public GameObject BirdBody;
+
+    [Header("Components")] public GameObject BirdBody;
     public Rigidbody Rb { get; private set; }
-    [field:SerializeField]
+
+    [field: SerializeField]
     // public CharacterController Controller { get; private set; }
     public Animator Animator { get; private set; }
+
     public PlayerStateMachine PlayerStates { get; private set; }
+
     #endregion
 
     #region Movement Variables
+
     public float Velocity;
-    [field:SerializeField]
-    public float ReducedSpeed { get; private set; } = 0.85f;
-    [field:SerializeField]
-    public float GlideSpeed { get; private set; } = 1.25f;
-    [field:SerializeField]
-    public float FlySpeed { get; private set; } = 5f;
-    [field:SerializeField]
-    public float SwoopSpeed { get; private set; } = 15f;
+    [field: SerializeField] public float ReducedSpeed { get; private set; } = 0.85f;
+    [field: SerializeField] public float GlideSpeed { get; private set; } = 1.25f;
+    [field: SerializeField] public float FlySpeed { get; private set; } = 5f;
+    [field: SerializeField] public float SwoopSpeed { get; private set; } = 15f;
+    [field: SerializeField] public Vector3 TakeoffSpeed { get; private set; }
+    public bool TakingOff;
+    
+    [field: SerializeField] public float FlightHeight { get; private set; }
     public Vector2 DirectionInput { get; private set; }
     [field:SerializeField]
     public float AngleX { get; private set; } = 30f;
@@ -48,6 +55,14 @@ public class PlayerController : MonoBehaviour
 
     [field: SerializeField]
     public LayerMask CritterLayer { get; private set; }
+
+    public UnityEvent CritterGrabbed;
+
+    public UnityEvent ReturnToFlight;
+
+    public Transform CritterTransform;
+
+    private bool _carryingCritter;
     
     #endregion
 
@@ -73,6 +88,11 @@ public class PlayerController : MonoBehaviour
 
         // MainCameraTransform = Camera.main.transform;
 
+        CritterGrabbed ??= new UnityEvent();
+        ReturnToFlight ??= new UnityEvent();
+        
+        CritterGrabbed.AddListener(GrabCritter);
+        
         if (PlayerStates == null)
         {
             PlayerStates = new PlayerStateMachine(this);
@@ -87,6 +107,8 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         PlayerStates.Update();
+        if(!_carryingCritter) return;
+        CritterTransform.transform.position = transform.position + GrabPosition;
     }
 
     private void FixedUpdate()
@@ -101,12 +123,16 @@ public class PlayerController : MonoBehaviour
 
     public void AimAttack()
     {
+        if(_carryingCritter) return;
+        
         PlayerStates.ChangeState(PlayerStates.AimState);
         Debug.Log("Aiming");
     }
     
     public void ProcessAttack()
     {
+        if(_carryingCritter) return;
+        
         PlayerStates.ChangeState(PlayerStates.StrikeState);
         Debug.Log("Attacking");
     }
@@ -114,5 +140,15 @@ public class PlayerController : MonoBehaviour
     void OnDrawGizmos()
     {
         Gizmos.DrawWireSphere(transform.position + GrabPosition, GrabRadius);
+    }
+
+    private void GrabCritter()
+    {
+        _carryingCritter = true;
+    }
+
+    private void OnCollisionEnter(Collision other)
+    {
+        ReturnToFlight.Invoke();
     }
 }

@@ -14,14 +14,14 @@ public class PlayerGlideState : PlayerBaseState
 
     public override void UpdateState()
     {
-        HandleSpeed();
-        CalcTurns();
+        
     }
 
     public override void FixedUpdateState()
     {
         Glide();
-        
+        HandleSpeed();
+        CalcTurns();
     }
 
     void HandleSpeed()

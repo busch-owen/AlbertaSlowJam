@@ -162,10 +162,27 @@ MonoBehaviour:
   <GlideSpeed>k__BackingField: 250
   <FlySpeed>k__BackingField: 600
   <SwoopSpeed>k__BackingField: 1250
-  <AngleX>k__BackingField: 40
-  <AngleY>k__BackingField: 0.5
-  <TurnSensitivity>k__BackingField: 70
-  <AttackVelocity>k__BackingField: {x: 0, y: 0, z: 0}
+  <TakeoffSpeed>k__BackingField: {x: 0, y: 100, z: 0}
+  TakingOff: 0
+  <FlightHeight>k__BackingField: 8
+  <AngleX>k__BackingField: 35
+  <AngleY>k__BackingField: 15
+  <TurnSensitivity>k__BackingField: 30
+  <RollSpeed>k__BackingField: 2
+  <AttackVelocity>k__BackingField: {x: 0, y: -500, z: 0}
+  <GrabPosition>k__BackingField: {x: 0, y: -1, z: 0}
+  <GrabRadius>k__BackingField: 2
+  <CritterLayer>k__BackingField:
+    serializedVersion: 2
+    m_Bits: 64
+  CritterGrabbed:
+    m_PersistentCalls:
+      m_Calls: []
+  ReturnToFlight:
+    m_PersistentCalls:
+      m_Calls: []
+  CritterTransform: {fileID: 0}
+  Camera: {fileID: 0}
   Gravity: -9.81
 --- !u!114 &9194200798187409781
 MonoBehaviour:
