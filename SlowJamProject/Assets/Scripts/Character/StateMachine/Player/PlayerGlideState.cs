@@ -18,7 +18,7 @@ public class PlayerGlideState : PlayerBaseState
         HandleSpeed();
     }
 
-        void HandleSpeed()
+    void HandleSpeed()
     {
         if (_player.DirectionInput.y > 0)
         {
@@ -28,6 +28,5 @@ public class PlayerGlideState : PlayerBaseState
         {
             _player.Velocity = _player.GlideSpeed;
         }
-
     }
 }

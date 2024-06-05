@@ -1,7 +1,4 @@
 using System;
-using System.Collections.Generic;
-using UnityEngine;
-
 [Serializable]
 public class StateMachine
 {
@@ -28,9 +25,11 @@ public class StateMachine
 
     public void Update()
     {
-        if (CurrentState != null)
-        {
-            CurrentState.UpdateState();
-        }
+        CurrentState?.UpdateState();
+    }
+
+    public void FixedUpdate()
+    {
+        CurrentState?.FixedUpdateState();
     }
 }

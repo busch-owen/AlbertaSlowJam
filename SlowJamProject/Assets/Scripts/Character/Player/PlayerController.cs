@@ -6,8 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     #region Components
     [Header("Components")]
-    [SerializeField]
-    GameObject _birdBody;
+    public GameObject BirdBody;
     public Rigidbody Rb { get; private set; }
     [field:SerializeField]
     // public CharacterController Controller { get; private set; }
@@ -34,6 +33,13 @@ public class PlayerController : MonoBehaviour
     public float TurnSensitivity { get; private set; } = 15f;
     #endregion
 
+    #region Attack Variables
+    
+    [field: SerializeField]
+    public Vector3 AttackVelocity { get; private set; }
+    
+    #endregion
+    
     // Misc
     #region Misc Variables
     [SerializeField]
@@ -43,7 +49,7 @@ public class PlayerController : MonoBehaviour
 
     void Awake()
     {
-        _birdBody = GameObject.FindGameObjectWithTag("BirdBody");
+        BirdBody = GameObject.FindGameObjectWithTag("BirdBody");
         Rb = GetComponent<Rigidbody>();
         // Controller = GetComponent<CharacterController>();
 
@@ -65,6 +71,11 @@ public class PlayerController : MonoBehaviour
         PlayerStates.Update();
     }
 
+    private void FixedUpdate()
+    {
+        PlayerStates.FixedUpdate();
+    }
+
     public void HandleMovementInput(Vector2 inputs)
     {
         DirectionInput = inputs;
@@ -72,6 +83,7 @@ public class PlayerController : MonoBehaviour
 
     public void ProcessAttack()
     {
-        // 
+        PlayerStates.ChangeState(PlayerStates.StrikeState);
+        Debug.Log("Attacking");
     }
 }

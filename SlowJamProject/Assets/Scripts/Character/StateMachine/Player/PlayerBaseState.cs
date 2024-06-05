@@ -11,6 +11,7 @@ public class PlayerBaseState : IState
 
     public virtual void EnterState() {}
     public virtual void UpdateState() {}
+    public virtual void FixedUpdateState() {}
     public virtual void ExitState() {}
 
     protected void Movement(Vector3 input)
@@ -31,7 +32,7 @@ public class PlayerBaseState : IState
 
     protected void Glide()
     {
-        _player.Rb.linearVelocity = _player.transform.forward * _player.Velocity * Time.fixedDeltaTime;
+        _player.Rb.linearVelocity = _player.transform.forward * (_player.Velocity * Time.fixedDeltaTime);
     }
 
     protected void CalcTurns()
@@ -42,9 +43,9 @@ public class PlayerBaseState : IState
 
     void TurnShipVisuals()
     {
-        Quaternion flightRotation = Quaternion.Slerp(_player.transform.rotation, Quaternion.Euler(new Vector3(
+        Quaternion flightRotation = Quaternion.Slerp(_player.BirdBody.transform.rotation, Quaternion.Euler(new Vector3(
             _player.DirectionInput.y * _player.AngleY,
-            _player.transform.localEulerAngles.y, -_player.DirectionInput.x * _player.AngleX)), Time.fixedDeltaTime * 0.65f);
+            _player.BirdBody.transform.localEulerAngles.y, -_player.DirectionInput.x * _player.AngleX)), Time.fixedDeltaTime * 0.65f);
 
         _player.transform.rotation = flightRotation;
     }
