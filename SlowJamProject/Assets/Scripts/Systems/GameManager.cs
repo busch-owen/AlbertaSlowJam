@@ -39,14 +39,15 @@ public class GameManager : Singleton<GameManager>
 
     public void EndGame()
     {
+        Debug.Log("Game ended");
+        _gameEnded.Invoke();
         if (_scoreHandler.CheckQuota())
         {
             _levelCleared.Invoke();
             Debug.Log("Quota Met");
+            return;
         }
-        
-        Debug.Log("Game ended");
-        _gameEnded.Invoke();
+        Debug.Log("Level Failed");
         //Reset(); Do this after scene reload
     }
 
