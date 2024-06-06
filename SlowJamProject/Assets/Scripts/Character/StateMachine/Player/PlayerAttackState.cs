@@ -1,16 +1,17 @@
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerAttackState : PlayerBaseState
 {
+    readonly int _snatchCritter = Animator.StringToHash("snatch");
+
     public PlayerAttackState(PlayerController player) : base(player)
-    {
-        
+    { 
     }
 
     public override void EnterState()
     {
         Plunge();
+        _player.Animator.CrossFadeInFixedTime(_snatchCritter, 0.15f);
         _player.ReturnToFlight.AddListener(ReturnToFlight);
     }
     
