@@ -107,8 +107,6 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         PlayerStates.Update();
-        if(!_carryingCritter) return;
-        CritterTransform.transform.position = transform.position + GrabPosition;
     }
 
     private void FixedUpdate()
@@ -145,6 +143,14 @@ public class PlayerController : MonoBehaviour
     private void GrabCritter()
     {
         _carryingCritter = true;
+        CritterTransform.SetParent(transform);
+        CritterTransform.transform.localPosition = GrabPosition;
+    }
+
+    public void StopCarryingCritter()
+    {
+        _carryingCritter = false;
+        Destroy(CritterTransform.gameObject); // Potentially replace this for object pooling despawn
     }
 
     private void OnCollisionEnter(Collision other)

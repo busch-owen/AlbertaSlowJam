@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1686080611615426495}
   - component: {fileID: 9194200798187409781}
   - component: {fileID: 2241053307416007039}
+  - component: {fileID: 7243958849365718388}
   m_Layer: 0
   m_Name: NEWPlayer
   m_TagString: Player
@@ -115,6 +116,29 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 116
   m_CollisionDetection: 1
+--- !u!136 &7243958849365718388
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2086568050570854704}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 2
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &4250477093798464822
 GameObject:
   m_ObjectHideFlags: 0
@@ -125,7 +149,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4941122386882130021}
   - component: {fileID: 7684930042212030519}
-  - component: {fileID: 2618472674628504731}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: BirdBody
@@ -157,27 +180,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4250477093798464822}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!135 &2618472674628504731
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4250477093798464822}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1565591013191446147
 PrefabInstance:
   m_ObjectHideFlags: 0

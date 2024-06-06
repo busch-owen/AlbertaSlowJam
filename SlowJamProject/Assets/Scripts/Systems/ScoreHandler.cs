@@ -1,32 +1,34 @@
+using TMPro;
 using UnityEngine;
 
 public class ScoreHandler : Singleton<ScoreHandler>
 {
-    private int _currentScore;
+    public int CurrentScore { get; private set; }
 
-    [SerializeField] private float scoreQuota;
+    [field: SerializeField] public float ScoreQuota { get; private set; }
     [SerializeField] private float quotaMultiplier;
 
     private bool _quotaMet;
     
     public void AddToScore(int value)
     {
-        _currentScore += value;
+        CurrentScore += value;
+        Debug.Log(CurrentScore);
     }
 
     public void ResetScore()
     {
-        _currentScore = 0;
+        CurrentScore = 0;
     }
 
     public bool CheckQuota()
     {
-        _quotaMet = scoreQuota >= _currentScore;
+        _quotaMet = ScoreQuota >= CurrentScore;
         return _quotaMet;
     }
 
     public void RaiseQuota()
     {
-        scoreQuota *= quotaMultiplier;
+        ScoreQuota *= quotaMultiplier;
     }
 }
