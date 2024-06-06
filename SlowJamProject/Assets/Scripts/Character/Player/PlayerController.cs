@@ -1,4 +1,5 @@
 using System;
+using UnityEditor.Rendering;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Serialization;
@@ -14,6 +15,8 @@ public class PlayerController : MonoBehaviour
     [field: SerializeField]
     // public CharacterController Controller { get; private set; }
     public Animator Animator { get; private set; }
+    [field:SerializeField]
+    public AudioManager AudioManager { get; private set; }
 
     public PlayerStateMachine PlayerStates { get; private set; }
 
@@ -21,6 +24,7 @@ public class PlayerController : MonoBehaviour
 
     #region Movement Variables
 
+    [Header("Movement Variables")]
     public float Velocity;
     [field: SerializeField] public float ReducedSpeed { get; private set; } = 0.85f;
     [field: SerializeField] public float GlideSpeed { get; private set; } = 1.25f;
@@ -43,6 +47,7 @@ public class PlayerController : MonoBehaviour
     #endregion
 
     #region Attack Variables
+    [Header("Attack Variables")]
     
     [field: SerializeField]
     public Vector3 AttackVelocity { get; private set; }
@@ -74,9 +79,11 @@ public class PlayerController : MonoBehaviour
     
     // Misc
     #region Misc Variables
+    [Header("Misc")]
     [SerializeField]
     public float Gravity = -9.81f;
-    // public Transform MainCameraTransform { get; private set; }
+    [field:SerializeField]
+    public AudioClip[] OwlSounds;
     #endregion
 
     void Awake()
@@ -84,15 +91,12 @@ public class PlayerController : MonoBehaviour
         BirdBody = GameObject.FindGameObjectWithTag("BirdBody");
         Camera = FindFirstObjectByType<CameraController>();
         Rb = GetComponent<Rigidbody>();
-        // Controller = GetComponent<CharacterController>();
-
-        // MainCameraTransform = Camera.main.transform;
 
         CritterGrabbed ??= new UnityEvent();
         ReturnToFlight ??= new UnityEvent();
         
         CritterGrabbed.AddListener(GrabCritter);
-        
+
         if (PlayerStates == null)
         {
             PlayerStates = new PlayerStateMachine(this);
