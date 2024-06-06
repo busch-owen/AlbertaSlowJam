@@ -36,6 +36,7 @@ public class PlayerAttackState : PlayerBaseState
         RaycastHit hit;
         if (Physics.SphereCast(_player.transform.position + _player.GrabPosition, _player.GrabRadius, Vector3.down, out hit, _player.GrabRadius, _player.CritterLayer))
         {
+            if (_player.CarryingCritter) return;
             _player.CritterTransform = hit.transform;
             _player.CritterGrabbed.Invoke();
             ReturnToFlight();

@@ -22,7 +22,7 @@ public class NestController : MonoBehaviour
         {
             Critter currentCritter = other.GetComponentInChildren<Critter>();
             CritterDelivered(currentCritter.PointValue);
-            Destroy(currentCritter.gameObject);
+            other.GetComponent<PlayerController>().StopCarryingCritter();
         }
     }
 }

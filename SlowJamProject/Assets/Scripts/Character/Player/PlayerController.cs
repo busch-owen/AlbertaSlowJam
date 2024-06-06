@@ -62,7 +62,7 @@ public class PlayerController : MonoBehaviour
 
     public Transform CritterTransform;
 
-    private bool _carryingCritter;
+    [field: SerializeField] public bool CarryingCritter { get; private set; }
     
     #endregion
 
@@ -121,7 +121,7 @@ public class PlayerController : MonoBehaviour
 
     public void AimAttack()
     {
-        if(_carryingCritter) return;
+        if(CarryingCritter) return;
         
         PlayerStates.ChangeState(PlayerStates.AimState);
         Debug.Log("Aiming");
@@ -129,7 +129,7 @@ public class PlayerController : MonoBehaviour
     
     public void ProcessAttack()
     {
-        if(_carryingCritter) return;
+        if(CarryingCritter) return;
         
         PlayerStates.ChangeState(PlayerStates.StrikeState);
         Debug.Log("Attacking");
@@ -142,15 +142,17 @@ public class PlayerController : MonoBehaviour
 
     private void GrabCritter()
     {
-        _carryingCritter = true;
+        CarryingCritter = true;
         CritterTransform.SetParent(transform);
         CritterTransform.transform.localPosition = GrabPosition;
+        CritterTransform.GetComponent<Rigidbody>().isKinematic = true;
     }
 
     public void StopCarryingCritter()
     {
-        _carryingCritter = false;
+        CarryingCritter = false;
         Destroy(CritterTransform.gameObject); // Potentially replace this for object pooling despawn
+        CritterTransform = null;
     }
 
     private void OnCollisionEnter(Collision other)
