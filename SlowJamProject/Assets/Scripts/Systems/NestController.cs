@@ -21,6 +21,7 @@ public class NestController : MonoBehaviour
         if (other.GetComponent<PlayerController>())
         {
             Critter currentCritter = other.GetComponentInChildren<Critter>();
+            if (!currentCritter) return;
             CritterDelivered(currentCritter.PointValue);
             other.GetComponent<PlayerController>().StopCarryingCritter();
         }
