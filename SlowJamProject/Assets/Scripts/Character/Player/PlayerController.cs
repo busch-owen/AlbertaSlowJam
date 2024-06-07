@@ -15,8 +15,6 @@ public class PlayerController : MonoBehaviour
     [field: SerializeField]
     // public CharacterController Controller { get; private set; }
     public Animator Animator { get; private set; }
-    [field:SerializeField]
-    public AudioManager AudioManager { get; private set; }
 
     public PlayerStateMachine PlayerStates { get; private set; }
 

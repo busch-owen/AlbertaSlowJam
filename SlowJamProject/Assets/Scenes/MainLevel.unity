@@ -118,6 +118,17 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &5960311 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 56428196333463003, guid: 4f7861c495cb0394cb20582dd08bc8cb, type: 3}
+  m_PrefabInstance: {fileID: 1352217723}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91ff644d28e76a74dab31e24347b8185, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &314243324 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6027023458569635361, guid: 53a9b7e4883e6ce4f8f11abddecfde54, type: 3}
@@ -241,13 +252,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1127384498950335390, guid: 4f7861c495cb0394cb20582dd08bc8cb, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 6.8470073
-      objectReference: {fileID: 0}
-    - target: {fileID: 1127384498950335390, guid: 4f7861c495cb0394cb20582dd08bc8cb, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -65.92651
+    - target: {fileID: 2173423225332812008, guid: 4f7861c495cb0394cb20582dd08bc8cb, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.473427
       objectReference: {fileID: 0}
     - target: {fileID: 2173423225332812008, guid: 4f7861c495cb0394cb20582dd08bc8cb, type: 3}
       propertyPath: m_LocalPosition.y
@@ -297,11 +304,23 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5149427314644829862, guid: 4f7861c495cb0394cb20582dd08bc8cb, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.473427
+      objectReference: {fileID: 0}
+    - target: {fileID: 5149427314644829862, guid: 4f7861c495cb0394cb20582dd08bc8cb, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 6.8470073
+      objectReference: {fileID: 0}
+    - target: {fileID: 5149427314644829862, guid: 4f7861c495cb0394cb20582dd08bc8cb, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -65.92651
+      objectReference: {fileID: 0}
     - target: {fileID: 7385189661366985024, guid: 4f7861c495cb0394cb20582dd08bc8cb, type: 3}
       propertyPath: m_Name
       value: NEWCameras
       objectReference: {fileID: 0}
-    - target: {fileID: 8013893125618910042, guid: 4f7861c495cb0394cb20582dd08bc8cb, type: 3}
+    - target: {fileID: 8914760823154915752, guid: 4f7861c495cb0394cb20582dd08bc8cb, type: 3}
       propertyPath: Target.TrackingTarget
       value: 
       objectReference: {fileID: 314243324}
@@ -376,6 +395,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1686080611615426495, guid: 53a9b7e4883e6ce4f8f11abddecfde54, type: 3}
+      propertyPath: Camera
+      value: 
+      objectReference: {fileID: 5960311}
+    - target: {fileID: 1686080611615426495, guid: 53a9b7e4883e6ce4f8f11abddecfde54, type: 3}
       propertyPath: OwlSounds.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -387,6 +410,10 @@ PrefabInstance:
       propertyPath: 'OwlSounds.Array.data[1]'
       value: 
       objectReference: {fileID: 8300000, guid: ca28d483325e7c043910cec8bac69067, type: 3}
+    - target: {fileID: 1686080611615426495, guid: 53a9b7e4883e6ce4f8f11abddecfde54, type: 3}
+      propertyPath: <TakeoffSpeed>k__BackingField.y
+      value: 200
+      objectReference: {fileID: 0}
     - target: {fileID: 2086568050570854704, guid: 53a9b7e4883e6ce4f8f11abddecfde54, type: 3}
       propertyPath: m_Name
       value: NEWPlayer
