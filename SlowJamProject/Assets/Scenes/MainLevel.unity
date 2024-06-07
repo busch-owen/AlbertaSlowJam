@@ -129,6 +129,67 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91ff644d28e76a74dab31e24347b8185, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1001 &176784940
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4794495309330533519, guid: 719b0444a20fb7e43b4a8be1a4e05afd, type: 3}
+      propertyPath: m_Name
+      value: CritterSpawner (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6289456230620398924, guid: 719b0444a20fb7e43b4a8be1a4e05afd, type: 3}
+      propertyPath: critterToSpawn
+      value: 
+      objectReference: {fileID: 5767350090416538468, guid: 267d3f87c1e0e7f4eadf53ea46091eb3, type: 3}
+    - target: {fileID: 7447686136388397331, guid: 719b0444a20fb7e43b4a8be1a4e05afd, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 150.69046
+      objectReference: {fileID: 0}
+    - target: {fileID: 7447686136388397331, guid: 719b0444a20fb7e43b4a8be1a4e05afd, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 4.86454
+      objectReference: {fileID: 0}
+    - target: {fileID: 7447686136388397331, guid: 719b0444a20fb7e43b4a8be1a4e05afd, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 11.028454
+      objectReference: {fileID: 0}
+    - target: {fileID: 7447686136388397331, guid: 719b0444a20fb7e43b4a8be1a4e05afd, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7447686136388397331, guid: 719b0444a20fb7e43b4a8be1a4e05afd, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7447686136388397331, guid: 719b0444a20fb7e43b4a8be1a4e05afd, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7447686136388397331, guid: 719b0444a20fb7e43b4a8be1a4e05afd, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7447686136388397331, guid: 719b0444a20fb7e43b4a8be1a4e05afd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7447686136388397331, guid: 719b0444a20fb7e43b4a8be1a4e05afd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7447686136388397331, guid: 719b0444a20fb7e43b4a8be1a4e05afd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 719b0444a20fb7e43b4a8be1a4e05afd, type: 3}
 --- !u!1001 &239448625
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -255,6 +316,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CritterSpawner (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 6289456230620398924, guid: 719b0444a20fb7e43b4a8be1a4e05afd, type: 3}
+      propertyPath: critterToSpawn
+      value: 
+      objectReference: {fileID: 7748890875165155141, guid: ad679bdd10a254341b2b1e87c3750eae, type: 3}
     - target: {fileID: 7447686136388397331, guid: 719b0444a20fb7e43b4a8be1a4e05afd, type: 3}
       propertyPath: m_LocalPosition.x
       value: -108.51256
@@ -625,6 +690,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CritterSpawner (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 6289456230620398924, guid: 719b0444a20fb7e43b4a8be1a4e05afd, type: 3}
+      propertyPath: critterToSpawn
+      value: 
+      objectReference: {fileID: 8881244763930581301, guid: f7f3f90d5836b1143a2a2617f9fb366e, type: 3}
     - target: {fileID: 7447686136388397331, guid: 719b0444a20fb7e43b4a8be1a4e05afd, type: 3}
       propertyPath: m_LocalPosition.x
       value: -109.27608
@@ -682,6 +751,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CritterSpawner (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 6289456230620398924, guid: 719b0444a20fb7e43b4a8be1a4e05afd, type: 3}
+      propertyPath: critterToSpawn
+      value: 
+      objectReference: {fileID: 1191720272810995925, guid: 964da8c72b2b10645a2dd6ce0fdce67d, type: 3}
     - target: {fileID: 7447686136388397331, guid: 719b0444a20fb7e43b4a8be1a4e05afd, type: 3}
       propertyPath: m_LocalPosition.x
       value: -128.19936
@@ -753,6 +826,67 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 4
   m_Center: {x: 0, y: 12.98, z: 0.75}
+--- !u!1001 &1110915825
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4794495309330533519, guid: 719b0444a20fb7e43b4a8be1a4e05afd, type: 3}
+      propertyPath: m_Name
+      value: CritterSpawner (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6289456230620398924, guid: 719b0444a20fb7e43b4a8be1a4e05afd, type: 3}
+      propertyPath: critterToSpawn
+      value: 
+      objectReference: {fileID: 765634862743151933, guid: 139605191bd2a644d8828a8101628fbf, type: 3}
+    - target: {fileID: 7447686136388397331, guid: 719b0444a20fb7e43b4a8be1a4e05afd, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 266.2891
+      objectReference: {fileID: 0}
+    - target: {fileID: 7447686136388397331, guid: 719b0444a20fb7e43b4a8be1a4e05afd, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.2000198
+      objectReference: {fileID: 0}
+    - target: {fileID: 7447686136388397331, guid: 719b0444a20fb7e43b4a8be1a4e05afd, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 210.73544
+      objectReference: {fileID: 0}
+    - target: {fileID: 7447686136388397331, guid: 719b0444a20fb7e43b4a8be1a4e05afd, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7447686136388397331, guid: 719b0444a20fb7e43b4a8be1a4e05afd, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7447686136388397331, guid: 719b0444a20fb7e43b4a8be1a4e05afd, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7447686136388397331, guid: 719b0444a20fb7e43b4a8be1a4e05afd, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7447686136388397331, guid: 719b0444a20fb7e43b4a8be1a4e05afd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7447686136388397331, guid: 719b0444a20fb7e43b4a8be1a4e05afd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7447686136388397331, guid: 719b0444a20fb7e43b4a8be1a4e05afd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 719b0444a20fb7e43b4a8be1a4e05afd, type: 3}
 --- !u!1001 &1185652584
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -765,6 +899,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CritterSpawner (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 6289456230620398924, guid: 719b0444a20fb7e43b4a8be1a4e05afd, type: 3}
+      propertyPath: critterToSpawn
+      value: 
+      objectReference: {fileID: 7634360110793407961, guid: 957d8d0315af89a4083c2662451d1ce0, type: 3}
     - target: {fileID: 7447686136388397331, guid: 719b0444a20fb7e43b4a8be1a4e05afd, type: 3}
       propertyPath: m_LocalPosition.x
       value: 290.84607
@@ -918,6 +1056,67 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1313111014
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4794495309330533519, guid: 719b0444a20fb7e43b4a8be1a4e05afd, type: 3}
+      propertyPath: m_Name
+      value: CritterSpawner (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6289456230620398924, guid: 719b0444a20fb7e43b4a8be1a4e05afd, type: 3}
+      propertyPath: critterToSpawn
+      value: 
+      objectReference: {fileID: 4630934156047585117, guid: 93974003d1654274cb5f63971e4aa677, type: 3}
+    - target: {fileID: 7447686136388397331, guid: 719b0444a20fb7e43b4a8be1a4e05afd, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 123.733696
+      objectReference: {fileID: 0}
+    - target: {fileID: 7447686136388397331, guid: 719b0444a20fb7e43b4a8be1a4e05afd, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.0371704
+      objectReference: {fileID: 0}
+    - target: {fileID: 7447686136388397331, guid: 719b0444a20fb7e43b4a8be1a4e05afd, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 246.73618
+      objectReference: {fileID: 0}
+    - target: {fileID: 7447686136388397331, guid: 719b0444a20fb7e43b4a8be1a4e05afd, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7447686136388397331, guid: 719b0444a20fb7e43b4a8be1a4e05afd, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7447686136388397331, guid: 719b0444a20fb7e43b4a8be1a4e05afd, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7447686136388397331, guid: 719b0444a20fb7e43b4a8be1a4e05afd, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7447686136388397331, guid: 719b0444a20fb7e43b4a8be1a4e05afd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7447686136388397331, guid: 719b0444a20fb7e43b4a8be1a4e05afd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7447686136388397331, guid: 719b0444a20fb7e43b4a8be1a4e05afd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 719b0444a20fb7e43b4a8be1a4e05afd, type: 3}
 --- !u!1001 &1352217723
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1072,6 +1271,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CritterSpawner (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 6289456230620398924, guid: 719b0444a20fb7e43b4a8be1a4e05afd, type: 3}
+      propertyPath: critterToSpawn
+      value: 
+      objectReference: {fileID: 5398707353680136289, guid: 9658ad7f930927a489ce617f6368edce, type: 3}
     - target: {fileID: 7447686136388397331, guid: 719b0444a20fb7e43b4a8be1a4e05afd, type: 3}
       propertyPath: m_LocalPosition.x
       value: 298.6864
@@ -1218,6 +1421,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CritterSpawner (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 6289456230620398924, guid: 719b0444a20fb7e43b4a8be1a4e05afd, type: 3}
+      propertyPath: critterToSpawn
+      value: 
+      objectReference: {fileID: 214532015924090035, guid: 3de9915ebc5d82748be4821b8a49b9c8, type: 3}
     - target: {fileID: 7447686136388397331, guid: 719b0444a20fb7e43b4a8be1a4e05afd, type: 3}
       propertyPath: m_LocalPosition.x
       value: 199.40968
@@ -1332,6 +1539,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CritterSpawner (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6289456230620398924, guid: 719b0444a20fb7e43b4a8be1a4e05afd, type: 3}
+      propertyPath: critterToSpawn
+      value: 
+      objectReference: {fileID: 3979212710812951616, guid: 4c184efa99764ef408a87f530820e558, type: 3}
     - target: {fileID: 7447686136388397331, guid: 719b0444a20fb7e43b4a8be1a4e05afd, type: 3}
       propertyPath: m_LocalPosition.x
       value: -37.320988
@@ -1389,6 +1600,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CritterSpawner (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 6289456230620398924, guid: 719b0444a20fb7e43b4a8be1a4e05afd, type: 3}
+      propertyPath: critterToSpawn
+      value: 
+      objectReference: {fileID: 8788145886312507907, guid: 601c819da7a19f54ab8365a09de9158f, type: 3}
     - target: {fileID: 7447686136388397331, guid: 719b0444a20fb7e43b4a8be1a4e05afd, type: 3}
       propertyPath: m_LocalPosition.x
       value: 183.83029
@@ -1503,6 +1718,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CritterSpawner
       objectReference: {fileID: 0}
+    - target: {fileID: 6289456230620398924, guid: 719b0444a20fb7e43b4a8be1a4e05afd, type: 3}
+      propertyPath: critterToSpawn
+      value: 
+      objectReference: {fileID: 5070211213388991703, guid: d95701dc699e82b428149cfa7b756e40, type: 3}
     - target: {fileID: 7447686136388397331, guid: 719b0444a20fb7e43b4a8be1a4e05afd, type: 3}
       propertyPath: m_LocalPosition.x
       value: 142.94183
@@ -1698,3 +1917,6 @@ SceneRoots:
   - {fileID: 1006529311}
   - {fileID: 1835139674}
   - {fileID: 1373588413}
+  - {fileID: 176784940}
+  - {fileID: 1110915825}
+  - {fileID: 1313111014}
