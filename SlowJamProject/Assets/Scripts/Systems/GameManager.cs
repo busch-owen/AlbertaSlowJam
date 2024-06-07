@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class GameManager : Singleton<GameManager>
 {
@@ -11,6 +12,7 @@ public class GameManager : Singleton<GameManager>
     private TimeHandler _timeHandler;
     private DirectionalLightHandler _dirLightHandle;
     private MainMenu _mainMenu;
+    private EndUI _endUI;
     private ScoreHandler _scoreHandler;  
 
     public override void Awake()
@@ -39,13 +41,17 @@ public class GameManager : Singleton<GameManager>
 
     public void EndGame()
     {
+        Debug.Log("Game ended");
         if (_scoreHandler.CheckQuota())
         {
             _levelCleared.Invoke();
             Debug.Log("Quota Met");
+            _endUI.DisplayWinScreen();
+            _gameEnded.Invoke();
+            return;
         }
-        
-        Debug.Log("Game ended");
+        _endUI.DisplayLoseScreen();
+        Debug.Log("Level Failed");
         _gameEnded.Invoke();
         //Reset(); Do this after scene reload
     }
@@ -55,6 +61,13 @@ public class GameManager : Singleton<GameManager>
         _timeHandler = FindFirstObjectByType<TimeHandler>();
         _dirLightHandle = FindFirstObjectByType<DirectionalLightHandler>();
         _mainMenu = FindFirstObjectByType<MainMenu>();
+        _endUI = FindFirstObjectByType<EndUI>();
         _scoreHandler = FindFirstObjectByType<ScoreHandler>();
+    }
+
+    public void ResetLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        ReassignReferences();
     }
 }

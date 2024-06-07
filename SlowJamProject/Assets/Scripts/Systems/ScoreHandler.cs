@@ -23,7 +23,7 @@ public class ScoreHandler : Singleton<ScoreHandler>
 
     public bool CheckQuota()
     {
-        _quotaMet = ScoreQuota >= CurrentScore;
+        _quotaMet = ScoreQuota <= CurrentScore;
         return _quotaMet;
     }
 
