@@ -279,9 +279,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 74655212}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: StartGame
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1351,7 +1351,7 @@ GameObject:
   - component: {fileID: 1105785022}
   m_Layer: 5
   m_Name: MenuPanel
-  m_TagString: Untagged
+  m_TagString: MenuPanel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2762,6 +2762,9 @@ SceneRoots:
   - {fileID: 1395834259}
   - {fileID: 7909185087228558661}
   - {fileID: 8957619236062076467}
-  - {fileID: 1662918633}
-  - {fileID: 1146878661}
   - {fileID: 536358102}
+  - {fileID: 6079987625685393318}
+  - {fileID: 1433619143699484764}
+  - {fileID: 960198852}
+  - {fileID: 964638866}
+  - {fileID: 2118406336}

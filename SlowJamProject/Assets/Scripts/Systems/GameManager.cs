@@ -25,13 +25,7 @@ public class GameManager : Singleton<GameManager>
         _gameEnded ??= new UnityEvent();
         _levelCleared ??= new UnityEvent();
         
-        _gameStarted.AddListener(_timeHandler.StartCountingTimer);
-        _gameEnded.AddListener(_timeHandler.StopCountingTimer);
-        _gameStarted.AddListener(_dirLightHandle.StartDayCycle);
-        _gameEnded.AddListener(_dirLightHandle.StopDayCycle);
-        _gameEnded.AddListener(_scoreHandler.ResetScore);
-        _gameStarted.AddListener(_mainMenu.CloseMainMenu);
-        _levelCleared.AddListener(_scoreHandler.RaiseQuota);
+        SetEvents();
     }
 
     public void StartGame()
@@ -69,5 +63,17 @@ public class GameManager : Singleton<GameManager>
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         ReassignReferences();
+        SetEvents();
+    }
+
+    public void SetEvents()
+    {
+        _gameStarted.AddListener(_timeHandler.StartCountingTimer);
+        _gameEnded.AddListener(_timeHandler.StopCountingTimer);
+        _gameStarted.AddListener(_dirLightHandle.StartDayCycle);
+        _gameEnded.AddListener(_dirLightHandle.StopDayCycle);
+        _gameEnded.AddListener(_scoreHandler.ResetScore);
+        _gameStarted.AddListener(_mainMenu.CloseMainMenu);
+        _levelCleared.AddListener(_scoreHandler.RaiseQuota);
     }
 }
