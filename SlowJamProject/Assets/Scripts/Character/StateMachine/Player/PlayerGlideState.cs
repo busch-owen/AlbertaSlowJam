@@ -33,11 +33,13 @@ public class PlayerGlideState : PlayerBaseState
         {
             _player.Velocity = _player.FlySpeed;
             _player.Animator.CrossFadeInFixedTime(_flapHash, 0.15f);
+            AudioManager.Instance.PlayAudio(_player.OwlSounds[0]);
         }
         else if (_player.DirectionInput.y < 0)
         {
             _player.Velocity = _player.GlideSpeed;
             _player.Animator.CrossFadeInFixedTime(_glideHash, 0.15f);
+            AudioManager.Instance.StopSounds();
         }
     }
 }
