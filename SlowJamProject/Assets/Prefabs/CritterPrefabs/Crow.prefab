@@ -50,7 +50,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 61787fb3867dc9f439e937b4531f1764, type: 3}
       propertyPath: m_Name
-      value: crow
+      value: Crow
       objectReference: {fileID: 0}
     - target: {fileID: 8417361359673230750, guid: 61787fb3867dc9f439e937b4531f1764, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -61,5 +61,28 @@ PrefabInstance:
     - {fileID: -8700617353114198275, guid: 61787fb3867dc9f439e937b4531f1764, type: 3}
     - {fileID: 65702495048144492, guid: 61787fb3867dc9f439e937b4531f1764, type: 3}
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 61787fb3867dc9f439e937b4531f1764, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -3530713897953186497}
   m_SourcePrefab: {fileID: 100100000, guid: 61787fb3867dc9f439e937b4531f1764, type: 3}
+--- !u!1 &5070211213388991703 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 61787fb3867dc9f439e937b4531f1764, type: 3}
+  m_PrefabInstance: {fileID: 5376290723547967878}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &-3530713897953186497
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5070211213388991703}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e1bc01eecc055e48abd70a1f0ca24ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <PointValue>k__BackingField: 2
+  velocityRange: {x: -5, y: 5}
+  randomizeRate: 3
