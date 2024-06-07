@@ -1,16 +1,26 @@
+using TMPro;
 using UnityEngine;
 
 public class EndUI : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    [SerializeField] private TMP_Text endText;
+    [SerializeField] private string winString, loseString;
+    [SerializeField] private GameObject menu;
+
+    private void Start()
     {
-        
+        menu.SetActive(false);
+    }
+    
+    public void DisplayWinScreen()
+    {
+        menu.SetActive(true);
+        endText.text = winString;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void DisplayLoseScreen()
     {
-        
+        menu.SetActive(true);
+        endText.text = loseString;
     }
 }
