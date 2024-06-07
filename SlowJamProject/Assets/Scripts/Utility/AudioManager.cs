@@ -9,7 +9,14 @@ public class AudioManager : Singleton<AudioManager>
         _audioSource = GetComponent<AudioSource>();
     }
 
-    public void PlayAudio(AudioClip clip)
+    public void PlayAudioLoop(AudioClip clip)
+    {
+        if (_audioSource.isPlaying) { return; }
+        _audioSource.clip = clip;
+        _audioSource.Play();
+    }
+
+    public void PlayAudioOneShot(AudioClip clip)
     {
         if (_audioSource.isPlaying) { return; }
         _audioSource.PlayOneShot(clip);

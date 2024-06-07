@@ -25,6 +25,7 @@ public class PlayerGlideState : PlayerBaseState
 
     public override void ExitState()
     {
+        AudioManager.Instance.StopSounds();
     }
 
     void HandleSpeed()
@@ -33,7 +34,7 @@ public class PlayerGlideState : PlayerBaseState
         {
             _player.Velocity = _player.FlySpeed;
             _player.Animator.CrossFadeInFixedTime(_flapHash, 0.15f);
-            AudioManager.Instance.PlayAudio(_player.OwlSounds[0]);
+            AudioManager.Instance.PlayAudioLoop(_player.OwlSounds[0]);
         }
         else if (_player.DirectionInput.y < 0)
         {

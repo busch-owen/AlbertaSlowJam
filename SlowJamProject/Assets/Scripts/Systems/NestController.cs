@@ -5,6 +5,7 @@ public class NestController : MonoBehaviour
 {
     private ScoreHandler _scoreHandler;
 
+
     private void Awake()
     {
         _scoreHandler = FindFirstObjectByType<ScoreHandler>();

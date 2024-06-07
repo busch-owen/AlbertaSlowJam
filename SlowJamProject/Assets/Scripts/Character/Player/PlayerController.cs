@@ -154,7 +154,8 @@ public class PlayerController : MonoBehaviour
     public void StopCarryingCritter()
     {
         _carryingCritter = false;
-        Destroy(CritterTransform.gameObject); // Potentially replace this for object pooling despawn
+        Destroy(CritterTransform.gameObject);
+        AudioManager.Instance.PlayAudioOneShot(OwlSounds[1]); // Potentially replace this for object pooling despawn
     }
 
     private void OnCollisionEnter(Collision other)
