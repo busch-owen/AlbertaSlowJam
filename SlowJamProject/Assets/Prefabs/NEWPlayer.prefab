@@ -49,14 +49,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: faee19aeac866284da15d1e413faafaf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BirdBody: {fileID: 1836185975997125586}
+  BirdBody: {fileID: 4250477093798464822}
   <Animator>k__BackingField: {fileID: 8756184440677915738}
   Velocity: 0
   <ReducedSpeed>k__BackingField: 0.85
   <GlideSpeed>k__BackingField: 250
   <FlySpeed>k__BackingField: 600
   <SwoopSpeed>k__BackingField: 1250
-  <TakeoffSpeed>k__BackingField: {x: 0, y: 100, z: 0}
+  <TakeoffSpeed>k__BackingField: {x: 0, y: 200, z: 0}
   TakingOff: 0
   <FlightHeight>k__BackingField: 8
   <AngleX>k__BackingField: 35
@@ -79,6 +79,9 @@ MonoBehaviour:
   <CarryingCritter>k__BackingField: 0
   Camera: {fileID: 0}
   Gravity: -9.81
+  OwlSounds:
+  - {fileID: 8300000, guid: 2db491d9075f138458df77cf8b37fc16, type: 3}
+  - {fileID: 8300000, guid: ca28d483325e7c043910cec8bac69067, type: 3}
 --- !u!114 &9194200798187409781
 MonoBehaviour:
   m_ObjectHideFlags: 0
