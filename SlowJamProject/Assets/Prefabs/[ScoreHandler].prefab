@@ -44,5 +44,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35c2ae2773153e147af0c0322542c92b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <ScoreQuota>k__BackingField: 10
-  quotaMultiplier: 1.25
+  <ScoreQuota>k__BackingField: 2
+  quotaMultiplier: 1.5

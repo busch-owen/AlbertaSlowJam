@@ -62,8 +62,8 @@ public class GameManager : Singleton<GameManager>
     public void ResetLevel()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        ReassignReferences();
-        SetEvents();
+        Invoke(nameof(ReassignReferences), 0.1f);
+        Invoke(nameof(SetEvents), 0.1f);
     }
 
     public void SetEvents()
