@@ -64,9 +64,69 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -8391222552659086748, guid: ecc162cd97f8a7443b128d063d2b7627, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -7698244811377996504, guid: ecc162cd97f8a7443b128d063d2b7627, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -6170022103088428909, guid: ecc162cd97f8a7443b128d063d2b7627, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -4898354384379426498, guid: ecc162cd97f8a7443b128d063d2b7627, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -3594065364962271099, guid: ecc162cd97f8a7443b128d063d2b7627, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -3160390051564967615, guid: ecc162cd97f8a7443b128d063d2b7627, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: ecc162cd97f8a7443b128d063d2b7627, type: 3}
       propertyPath: m_Name
       value: Snake_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: ecc162cd97f8a7443b128d063d2b7627, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3332957971583572836, guid: ecc162cd97f8a7443b128d063d2b7627, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3524185649067430892, guid: ecc162cd97f8a7443b128d063d2b7627, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5534938399482625121, guid: ecc162cd97f8a7443b128d063d2b7627, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5588272793171909508, guid: ecc162cd97f8a7443b128d063d2b7627, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7036213049465896255, guid: ecc162cd97f8a7443b128d063d2b7627, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7880139057833696174, guid: ecc162cd97f8a7443b128d063d2b7627, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8106403929935506441, guid: ecc162cd97f8a7443b128d063d2b7627, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8150097883520815116, guid: ecc162cd97f8a7443b128d063d2b7627, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8417361359673230750, guid: ecc162cd97f8a7443b128d063d2b7627, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
