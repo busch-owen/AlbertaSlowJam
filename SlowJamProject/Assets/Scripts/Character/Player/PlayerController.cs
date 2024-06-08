@@ -1,3 +1,4 @@
+using Character.StateMachine.Player;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -60,7 +61,8 @@ public class PlayerController : MonoBehaviour
     public UnityEvent ReturnToFlight;
 
     public Transform CritterTransform;
-
+    
+    public float IdealFlightHeight { get; private set; }
     [field: SerializeField] public bool CarryingCritter { get; private set; }
     
     #endregion
@@ -110,6 +112,17 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
         PlayerStates.FixedUpdate();
+        CalculateIdealHeight();
+        //here we calculate our ideal height
+    }
+
+    private void CalculateIdealHeight()
+    {
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position, -transform.up, out hit,Mathf.Infinity,  LayerMask.GetMask("Terrain")))
+        {
+            IdealFlightHeight = hit.point.y + FlightHeight;
+        }
     }
 
     public void HandleMovementInput(Vector2 inputs)
@@ -155,6 +168,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
-        ReturnToFlight.Invoke();
+        PlayerStates.ChangeState(PlayerStates.ReturnState);
+        //ReturnToFlight.Invoke();
     }
 }

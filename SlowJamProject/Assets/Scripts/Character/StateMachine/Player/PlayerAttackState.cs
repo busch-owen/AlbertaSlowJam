@@ -12,18 +12,18 @@ public class PlayerAttackState : PlayerBaseState
     {
         Plunge();
         _player.Animator.CrossFadeInFixedTime(_snatchCritter, 0.15f);
-        _player.ReturnToFlight.AddListener(ReturnToFlight);
+        //_player.ReturnToFlight.AddListener(ReturnToFlight);
     }
     
     public override void FixedUpdateState()
     {
         CheckForCritters();
 
-        if (_player.transform.position.y >= _player.FlightHeight && _player.TakingOff)
-        {
-            _player.PlayerStates.ChangeState(_player.PlayerStates.GlideState);
-            _player.TakingOff = false;
-        }
+        // if (_player.transform.position.y >= _player.FlightHeight && _player.TakingOff)
+        // {
+        //     _player.PlayerStates.ChangeState(_player.PlayerStates.GlideState);
+        //     _player.TakingOff = false;
+        // }
     }
 
     private void Plunge()
@@ -39,7 +39,7 @@ public class PlayerAttackState : PlayerBaseState
             if (_player.CarryingCritter) return;
             _player.CritterTransform = hit.transform;
             _player.CritterGrabbed.Invoke();
-            ReturnToFlight();
+            _player.PlayerStates.ChangeState(_player.PlayerStates.ReturnState);
         }
     }
 }

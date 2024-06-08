@@ -3,7 +3,6 @@ using UnityEngine;
 public class PlayerBaseState : IState
 {
     protected PlayerController _player;
-
     public PlayerBaseState(PlayerController player)
     {
         _player = player;
@@ -32,7 +31,19 @@ public class PlayerBaseState : IState
 
     protected void Glide()
     {
-        _player.Rb.linearVelocity = _player.transform.forward * (_player.Velocity * Time.fixedDeltaTime);
+        Vector3 forward = _player.transform.forward;
+        Vector3 up = Vector3.zero;
+
+        
+        if (_player.transform.position.y < _player.IdealFlightHeight - 1f)
+        {
+            up = _player.transform.up * _player.TakeoffSpeed.y;
+        }
+        else if (_player.transform.position.y > _player.IdealFlightHeight + 1f)
+        {
+            up = -_player.transform.up * _player.TakeoffSpeed.y;
+        }
+        _player.Rb.linearVelocity = forward  * (_player.Velocity * Time.fixedDeltaTime) + up * Time.fixedDeltaTime;
     }
 
     protected void CalcTurns()

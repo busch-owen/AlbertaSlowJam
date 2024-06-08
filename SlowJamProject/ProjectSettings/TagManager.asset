@@ -5,11 +5,12 @@ TagManager:
   serializedVersion: 3
   tags:
   - BirdBody
+  - MenuPanel
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Terrain
   - Water
   - UI
   - Critters

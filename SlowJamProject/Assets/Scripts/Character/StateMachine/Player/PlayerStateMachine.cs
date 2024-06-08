@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Character.StateMachine.Player;
 using UnityEngine;
 
 public class PlayerStateMachine : StateMachine
@@ -8,6 +9,7 @@ public class PlayerStateMachine : StateMachine
     public PlayerGlideState GlideState;
     public PlayerAttackState StrikeState;
     public PlayerAimState AimState;
+    public PlayerReturnToFlightState ReturnState;
     #endregion
 
     public PlayerStateMachine(PlayerController player)
@@ -15,5 +17,6 @@ public class PlayerStateMachine : StateMachine
         GlideState = new PlayerGlideState(player);
         StrikeState = new PlayerAttackState(player);
         AimState = new PlayerAimState(player);
+        ReturnState = new PlayerReturnToFlightState(player);
     }
 }
